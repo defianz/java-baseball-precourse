@@ -3,7 +3,9 @@ package controller;
 public class GameController {
 
     public void startGame(){
-
+        beforeGame();
+        playGame();
+        afterGame();
     }
 
     private void beforeGame() {
