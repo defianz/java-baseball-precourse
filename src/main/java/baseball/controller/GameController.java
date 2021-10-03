@@ -39,7 +39,7 @@ public class GameController {
 
     private void afterGame(){
         AfterGameService afterGameService = AfterGameServiceImpl.getInstance();
-        afterGameService.afterGame();
+        againGame = afterGameService.afterGame();
     }
 
     private void printEnd() {
