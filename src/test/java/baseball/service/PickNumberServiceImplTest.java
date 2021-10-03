@@ -1,26 +1,31 @@
 package baseball.service;
 
 import baseball.object.ThreeNumber;
+import nextstep.test.NSTest;
+import nextstep.utils.Randoms;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.mockStatic;
 
-class PickNumberServiceImplTest {
+class PickNumberServiceImplTest{
 
     PickNumberService pickNumberService = PickNumberServiceImpl.getInstance();
 
     @Test
     public void pickNumber() throws Exception {
-        // given
-        ThreeNumber threeNumber = pickNumberService.pickNumber();
-        //when
-
-        //then
-        assertThat(threeNumber.getFirst()).isNotNull();
-        assertThat(threeNumber.getSecond()).isNotNull();
-        assertThat(threeNumber.getThird()).isNotNull();
+        try (final MockedStatic<Randoms> mockRandoms = mockStatic(Randoms.class)) {
+            mockRandoms
+                    .when(() -> Randoms.pickNumberInRange(anyInt(), anyInt()))
+                    .thenReturn(1, 3, 5);
+            ThreeNumber result = pickNumberService.pickNumber();
+            assertThat(result.getFirst()).isEqualTo(1);
+            assertThat(result.getSecond()).isEqualTo(3);
+            assertThat(result.getThird()).isEqualTo(5);
+        }
     }
-
 }
