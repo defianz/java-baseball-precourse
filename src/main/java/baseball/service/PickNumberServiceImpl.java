@@ -3,6 +3,10 @@ package baseball.service;
 import baseball.object.ThreeNumber;
 import nextstep.utils.Randoms;
 
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
 public class PickNumberServiceImpl implements PickNumberService {
 
 
@@ -14,8 +18,17 @@ public class PickNumberServiceImpl implements PickNumberService {
 
     @Override
     public ThreeNumber pickNumber() {
-        ThreeNumber threeNumber = new ThreeNumber(Randoms.pickNumberInRange(1, 9), Randoms.pickNumberInRange(1, 9), Randoms.pickNumberInRange(1, 9));
+        ThreeNumber threeNumber = makeComputerNumber();
         return threeNumber;
+    }
+
+    private ThreeNumber makeComputerNumber() {
+        Set<Integer> validate = new HashSet<>();
+        while(validate.size() != 3){
+            validate.add(Randoms.pickNumberInRange(1,9));
+        }
+        Iterator<Integer> it = validate.iterator();
+        return new ThreeNumber(it.next(),it.next(),it.next());
     }
 }
 
