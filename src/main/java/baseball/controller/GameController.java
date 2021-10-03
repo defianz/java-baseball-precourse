@@ -5,14 +5,22 @@ import baseball.service.*;
 
 public class GameController {
 
+    public static boolean againGame;
+
+    public GameController() {
+        againGame = true;
+    }
+
     public void startGame(){
-        beforeGame();
-        playGame();
-        afterGame();
+        while (againGame) {
+            beforeGame();
+            playGame();
+            afterGame();
+        }
     }
 
     private void beforeGame() {
-
+        againGame = false;
     }
 
     private void playGame(){
@@ -30,7 +38,8 @@ public class GameController {
     }
 
     private void afterGame(){
-
+        AfterGameService afterGameService = AfterGameServiceImpl.getInstance();
+        afterGameService.afterGame();
     }
 
     private void printEnd() {
