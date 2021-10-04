@@ -4,5 +4,5 @@ import baseball.object.ThreeNumber;
 
 public interface CompareNumberService {
 
-    public boolean compareNumber(ThreeNumber com, ThreeNumber user);
+    boolean compareNumber(ThreeNumber com, ThreeNumber user);
 }

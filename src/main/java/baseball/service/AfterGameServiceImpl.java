@@ -1,6 +1,5 @@
 package baseball.service;
 
-import baseball.controller.GameController;
 import nextstep.utils.Console;
 
 public class AfterGameServiceImpl implements AfterGameService {

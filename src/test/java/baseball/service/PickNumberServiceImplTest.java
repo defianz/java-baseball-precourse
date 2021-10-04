@@ -1,14 +1,11 @@
 package baseball.service;
 
 import baseball.object.ThreeNumber;
-import nextstep.test.NSTest;
 import nextstep.utils.Randoms;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.mockStatic;
 

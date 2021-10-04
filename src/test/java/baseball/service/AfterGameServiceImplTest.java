@@ -1,21 +1,10 @@
 package baseball.service;
 
 import nextstep.test.NSTest;
-import nextstep.utils.Console;
-import nextstep.utils.Randoms;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.MockedStatic;
-
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
-import java.io.PrintStream;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.Mockito.mockStatic;
 
 class AfterGameServiceImplTest extends NSTest {
 

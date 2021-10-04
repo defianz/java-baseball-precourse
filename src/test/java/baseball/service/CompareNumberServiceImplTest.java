@@ -1,7 +1,6 @@
 package baseball.service;
 
 import baseball.object.ThreeNumber;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +9,6 @@ import java.io.OutputStream;
 import java.io.PrintStream;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 class CompareNumberServiceImplTest {
 
@@ -64,6 +62,30 @@ class CompareNumberServiceImplTest {
         //then
         assertThat(result).isFalse();
         assertThat(output()).contains("2스트라이크");
+    }
+
+    @Test
+    public void 원볼() throws Exception {
+        // given
+        ThreeNumber comNumber = new ThreeNumber(4,5,7);
+        ThreeNumber userNumber = new ThreeNumber(1,2,5);
+        //when
+        boolean result = compareNumberService.compareNumber(comNumber, userNumber);
+        //then
+        assertThat(result).isFalse();
+        assertThat(output()).contains("1볼");
+    }
+
+    @Test
+    public void 원스트라이크원볼() throws Exception {
+        // given
+        ThreeNumber comNumber = new ThreeNumber(4,5,7);
+        ThreeNumber userNumber = new ThreeNumber(4,7,2);
+        //when
+        boolean result = compareNumberService.compareNumber(comNumber, userNumber);
+        //then
+        assertThat(result).isFalse();
+        assertThat(output()).contains("1스트라이크 1볼");
     }
 
 

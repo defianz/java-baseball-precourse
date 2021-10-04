@@ -2,11 +2,11 @@ package baseball.service;
 
 import baseball.object.ThreeNumber;
 import nextstep.test.NSTest;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.*;
+
 
 class UserInputNumberServiceImplTest extends NSTest {
 
@@ -21,9 +21,9 @@ class UserInputNumberServiceImplTest extends NSTest {
     @Test
     public void 정상() throws Exception {
         run("146");
-        Assertions.assertThat(result.getFirst()).isEqualTo(1);
-        Assertions.assertThat(result.getSecond()).isEqualTo(4);
-        Assertions.assertThat(result.getThird()).isEqualTo(6);
+        assertThat(result.getFirst()).isEqualTo(1);
+        assertThat(result.getSecond()).isEqualTo(4);
+        assertThat(result.getThird()).isEqualTo(6);
     }
 
     @Test

@@ -1,11 +1,8 @@
 package baseball.service;
 
 import baseball.object.ThreeNumber;
+import baseball.util.CustomList;
 import nextstep.utils.Randoms;
-
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
 
 public class PickNumberServiceImpl implements PickNumberService {
 
@@ -23,12 +20,14 @@ public class PickNumberServiceImpl implements PickNumberService {
     }
 
     private ThreeNumber makeComputerNumber() {
-        Set<Integer> validate = new HashSet<>();
-        while(validate.size() != 3){
-            validate.add(Randoms.pickNumberInRange(1,9));
+        CustomList<Integer> customList = new CustomList();
+        while(customList.size() != 3 ){
+            customList.add(Randoms.pickNumberInRange(1, 9));
         }
-        Iterator<Integer> it = validate.iterator();
-        return new ThreeNumber(it.next(),it.next(),it.next());
+
+        // 성능 개선을 위해 CustomList를 좀더 바꿔야할수도..?
+        return new ThreeNumber((int)customList.get(0), (int)customList.get(1), (int)customList.get(2));
     }
+
 }
 

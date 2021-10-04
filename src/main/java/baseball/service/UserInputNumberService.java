@@ -3,7 +3,7 @@ package baseball.service;
 import baseball.object.ThreeNumber;
 
 public interface UserInputNumberService {
-    public ThreeNumber userInputNumber();
+    ThreeNumber userInputNumber();
 
-    public boolean validateNumber(String input);
+    boolean validateNumber(String input);
 }
