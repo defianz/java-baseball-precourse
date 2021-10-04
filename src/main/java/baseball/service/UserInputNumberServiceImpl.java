@@ -12,7 +12,7 @@ public class UserInputNumberServiceImpl implements UserInputNumberService {
     }
 
     @Override
-    public ThreeNumber userInputNumber() {
+    public ThreeNumber inputUserNumber() {
         String inputObj = Console.readLine();
         while (!validateNumber(inputObj)) {
             inputObj = Console.readLine();

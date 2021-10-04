@@ -28,11 +28,11 @@ public class GameController {
         ThreeNumber computerNumber = pickNumber.pickNumber();
 
         UserInputNumberService userInputNumber = UserInputNumberServiceImpl.getInstance();
-        ThreeNumber userNumber = userInputNumber.userInputNumber();
+        ThreeNumber userNumber = userInputNumber.inputUserNumber();
 
         CompareNumberService compareNumberService = CompareNumberServiceImpl.getInstance();
         while (!compareNumberService.compareNumber(computerNumber, userNumber)) {
-            userNumber = userInputNumber.userInputNumber();
+            userNumber = userInputNumber.inputUserNumber();
         }
         printEnd();
     }
