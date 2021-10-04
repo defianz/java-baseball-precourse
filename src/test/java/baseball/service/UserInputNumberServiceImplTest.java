@@ -34,7 +34,7 @@ class UserInputNumberServiceImplTest extends NSTest {
 
     @Test
     public void 유효숫자가아닌수입력() throws Exception {
-        running("023");
+        running("107");
        verify("[ERROR] 1-9 로 이루어진 세자리의 올바른 수를 입력해주세요.");
     }
 

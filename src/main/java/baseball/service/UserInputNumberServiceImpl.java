@@ -37,7 +37,7 @@ public class UserInputNumberServiceImpl implements UserInputNumberService {
         }
 
         // 1-9 숫자 체크
-        String REGEX = "[1-9]+";
+        String REGEX = "^[1-9]+$";
         if (!input.matches(REGEX)) {
             System.out.println("[ERROR] 1-9 로 이루어진 세자리의 올바른 수를 입력해주세요.");
             return false;
