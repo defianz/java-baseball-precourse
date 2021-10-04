@@ -40,6 +40,6 @@ class UserInputNumberServiceImplTest extends NSTest {
 
     @Override
     public void runMain() {
-        result = userInputNumberService.userInputNumber();
+        result = userInputNumberService.inputUserNumber();
     }
 }
